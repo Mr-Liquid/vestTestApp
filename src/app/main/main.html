@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div ng-show="main.spinner">
+    <div class="overlay"></div>
+    <div class="spinner spinner-loader">Loading…</div>
+  </div>
+  <description active-row="main.activeRow"></description>
+  <music-collection playlist="main.playlist" active-row="main.activeRow"></music-collection>
+  <a ng-href="#/statistics" class="btn btn-info" ng-show="main.playlist">Statistics</a>
+  <alert class="alert-danger col-md-4 alert-modal" ng-repeat="alert in main.alerts" type="alert.type"
+         close="main.closeAlert($index)">{{alert.msg}}</alert>
+</div>

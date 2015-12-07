@@ -1,0 +1,30 @@
+<div class="description-block clearfix" ng-show="activeRow && activeRow.Artist">
+    <div class="overlay" ng-show="spinner"></div>
+    <div class="cover col-xs-12 col-md-4 clearfix">
+      <img ng-src="{{coverSrc}}" alt=""/>
+      <div>
+        <h3>{{activeRow.Name}}</h3>
+        <p>{{activeRow.Artist}}</p>
+      </div>
+    </div>
+    <div class="comments col-xs-12 col-sm-12 col-md-7 col-md-offset-1">
+      <div class="col-md-8">
+        <textarea name=""
+                  id=""
+                  cols=""
+                  rows="4"
+                  ng-model="comments.comment"
+                  ng-blur="saveComment(comments.comment)"
+                  placeholder="your comment"></textarea>
+      </div>
+
+      <div class="col-md-4 comments-block">
+        <h4>Commnets : {{activeRow.comments.length}}</h4>
+        <div ng-repeat="comment in activeRow.comments track by $index" class="comment-list">
+          <div class="comment-text">{{comment.comment}}</div>
+          <div tweet="comment.comment" tweet-url="" class="tweet-button"></div>
+        </div>
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+.music-collection-table {
+  tr {
+    color: #fff;
+  }
+  & > thead > tr > th {
+    border-bottom: 0;
+    a {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+
+      }
+    }
+  }
+  & > tbody > tr > td {
+    border-top-color: #434343;
+  }
+  &.table-striped > tbody > tr:nth-of-type(odd) {
+    background: #292929;
+  }
+}
